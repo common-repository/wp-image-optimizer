@@ -1,0 +1,345 @@
+/**
+ * All of the CSS for your admin-specific functionality should be included in this file.
+ *
+ * The file is enqueued from inc/admin/class-admin.php.
+ */
+.wpio-container * { box-sizing: border-box; }
+
+.wpio-container .flex-grid {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.wpio-container .flex-grid .col {
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 1 1 0;
+    -ms-flex: 1 1 0;
+    flex: 1 1 0;
+	-webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+.wpio-container .flex-grid .col.col-1 {
+    -webkit-flex: 0 0 33.33%;
+    -ms-flex: 0 0 33.33%;
+    flex: 0 0 33.33%;
+}
+
+
+.wpio-container .flex-grid .col.stat {text-transform:uppercase;color:#555;text-align:center}
+.wpio-container .flex-grid .col.stat div {color:#307bbb;display:block;font-size:32px;height: 40px;line-height:40px;margin:5px auto;}
+
+.wpio-container .flex-grid .col button {display:block;width:99%;font-weight:bold;text-align:center;font-size:14px;padding:10px;height:auto;margin:0 auto}
+
+@media (max-width: 1024px) {
+	
+	.wpio-container .flex-grid .col.col-1 {
+		-webkit-flex: 1 1 0;
+		-ms-flex: 1 1 0;
+		flex: 1 1 0;
+	}
+	
+  .wpio-container .flex-grid .flex-grid {
+    display: block;
+  }
+  .wpio-container .flex-grid .flex-grid .col {
+      display:block;width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .wpio-container .flex-grid {
+    display: block;
+  }
+  .wpio-container .flex-grid .col {
+      display:block;width: 100%;
+  }
+}
+/*
+.flex-grid {
+  margin: 0 0 20px 0;
+}
+.col {
+  padding: 20px;
+}*/
+.wpio-container .panel {background:white;padding:20px;margin:5px;}
+
+.alien,
+.alien.loading {margin:0 auto;width:225px;height:300px;background:url(../../../assets/images/aliens.gif) 0 0 no-repeat;position:relative;}
+.alien.cry {background-position:-225px 0;}
+.alien.wow {background-position:-450px 0;}
+.alien.happy {background-position:-675px 0;}
+
+.alien.loading:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background-color: #307bbb;
+    transform-origin: 50%;
+    animation: bounce2 500ms alternate infinite ease;
+  }
+@keyframes bounce2 {
+  0% {
+    top: 225px;
+    height: 25px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 75px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+
+.wpio_text {text-align:center;color:#307bbb;font-weight:bold;font-size:18px}
+
+.bounceball {
+  position: relative;
+  display: inline-block;
+  height: 40px;
+  width:15px;
+}
+.bounceball:before {
+    position: absolute;
+    content: '';
+    display: block;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #307bbb;
+    transform-origin: 50%;
+    animation: bounce 500ms alternate infinite ease;
+  }
+@keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+		.meter { 
+			height: 35px;  /* Can be anything */
+			position: relative;
+			margin: 10px 0; /* Just for demo spacing */
+			background: #555;
+			-moz-border-radius: 25px;
+			-webkit-border-radius: 25px;
+			border-radius: 25px;
+			padding: 5px;
+			-webkit-box-shadow: inset 0 -1px 1px rgba(255,255,255,0.3);
+			-moz-box-shadow   : inset 0 -1px 1px rgba(255,255,255,0.3);
+			box-shadow        : inset 0 -1px 1px rgba(255,255,255,0.3);
+		}
+		.percentHolder {position:absolute;top:0;bottom:0;left:0;right:0;text-align: center; white-space: nowrap;z-index:99;}
+		.percentHolder:before {content: '';display: inline-block; height: 100%; vertical-align: middle; margin-right: -0.25em;}
+		.showpercent { display: inline-block;vertical-align: middle;color:#FFF;font-weight:bold; }
+		
+		/*.meter > .showpercent {z-index:99;background:transparent;width:auto;height: auto;overflow: auto;margin: auto;position: absolute; top: 0; left: 0; bottom: 0; right: 0;text-align:center}*/
+		.meter > span {
+			display: block;
+			height: 100%;
+			   -webkit-border-top-right-radius: 20px;
+			-webkit-border-bottom-right-radius: 20px;
+			       -moz-border-radius-topright: 20px;
+			    -moz-border-radius-bottomright: 20px;
+			           border-top-right-radius: 20px;
+			        border-bottom-right-radius: 20px;
+			    -webkit-border-top-left-radius: 20px;
+			 -webkit-border-bottom-left-radius: 20px;
+			        -moz-border-radius-topleft: 20px;
+			     -moz-border-radius-bottomleft: 20px;
+			            border-top-left-radius: 20px;
+			         border-bottom-left-radius: 20px;
+			background-color: rgb(43,194,83);
+			background-image: -webkit-gradient(
+			  linear,
+			  left bottom,
+			  left top,
+			  color-stop(0, rgb(43,194,83)),
+			  color-stop(1, rgb(84,240,84))
+			 );
+			background-image: -moz-linear-gradient(
+			  center bottom,
+			  rgb(43,194,83) 37%,
+			  rgb(84,240,84) 69%
+			 );
+			-webkit-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			-moz-box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			box-shadow: 
+			  inset 0 2px 9px  rgba(255,255,255,0.3),
+			  inset 0 -2px 6px rgba(0,0,0,0.4);
+			position: relative;
+			overflow: hidden;
+		}
+		.meter > span:after, .animate > span > span {
+			content: "";
+			position: absolute;
+			top: 0; left: 0; bottom: 0; right: 0;
+			background-image: 
+			   -webkit-gradient(linear, 0 0, 100% 100%, 
+			      color-stop(.25, rgba(255, 255, 255, .2)), 
+			      color-stop(.25, transparent), color-stop(.5, transparent), 
+			      color-stop(.5, rgba(255, 255, 255, .2)), 
+			      color-stop(.75, rgba(255, 255, 255, .2)), 
+			      color-stop(.75, transparent), to(transparent)
+			   );
+			background-image: 
+				-moz-linear-gradient(
+				  -45deg, 
+			      rgba(255, 255, 255, .2) 25%, 
+			      transparent 25%, 
+			      transparent 50%, 
+			      rgba(255, 255, 255, .2) 50%, 
+			      rgba(255, 255, 255, .2) 75%, 
+			      transparent 75%, 
+			      transparent
+			   );
+			z-index: 1;
+			-webkit-background-size: 50px 50px;
+			-moz-background-size: 50px 50px;
+			-webkit-animation: move 2s linear infinite;
+			   -webkit-border-top-right-radius: 8px;
+			-webkit-border-bottom-right-radius: 8px;
+			       -moz-border-radius-topright: 8px;
+			    -moz-border-radius-bottomright: 8px;
+			           border-top-right-radius: 8px;
+			        border-bottom-right-radius: 8px;
+			    -webkit-border-top-left-radius: 20px;
+			 -webkit-border-bottom-left-radius: 20px;
+			        -moz-border-radius-topleft: 20px;
+			     -moz-border-radius-bottomleft: 20px;
+			            border-top-left-radius: 20px;
+			         border-bottom-left-radius: 20px;
+			overflow: hidden;
+		}
+		
+		.animate > span:after {
+			display: none;
+		}
+		
+		@-webkit-keyframes move {
+		    0% {
+		       background-position: 0 0;
+		    }
+		    100% {
+		       background-position: 50px 50px;
+		    }
+		}
+	
+	
+
+
+.slider-checkbox {
+  position: relative;
+}
+.slider-checkbox input {
+  margin: 0px;
+  margin-top: 1px;
+  cursor: pointer;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  background: red;
+  width: 40px;
+  height: 20px;
+}
+.slider-checkbox input:checked + .label:before {
+  background-color: #307bbb;
+  font-size: 18px;
+  content: "\f147";
+  padding-left: 2px;
+}
+.slider-checkbox input:checked + .label:after {
+  left: 21px;
+}
+.slider-checkbox .label {
+  position: relative;
+  padding-left: 46px;
+}
+.slider-checkbox .label:before, .slider-checkbox .label:after {
+  position: absolute;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  transition: background-color 0.3s, left 0.3s;
+}
+.slider-checkbox .label:before {
+  content: "\f158";
+  font-family: "dashicons";
+  color: #fff;
+  box-sizing: border-box;
+  padding-left: 20px;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: #888;
+  left: 0px;
+  top: 0px;
+  height: 20px;
+  width: 40px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.slider-checkbox .label:after {
+  content: "";
+  letter-spacing: 20px;
+  background: #fff;
+  left: 1px;
+  top: 1px;
+  height: 18px;
+  width: 18px;
+}
+
